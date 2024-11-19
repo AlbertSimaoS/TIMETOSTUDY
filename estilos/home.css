@@ -1,0 +1,498 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+
+
+                                              /* Estilo do cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  height: 8vh;
+  z-index: 1000;
+  background-color: transparent; /* Cabeçalho transparente */
+  transition: background-color 0.3s ease; /* Suaviza a transição */
+}
+
+header.scrolled {
+  background-color: #333; /* Cor desejada quando rolar */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #d9534f; /* Cor ao passar o mouse */
+}
+
+/* Barra de Destaque */
+.linha-animada {
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+  height: 3px;
+  width: 60px;
+  background-color: #d9534f;
+  transition: all 0.3s ease;
+}
+
+/* Esconde a barra de navegação no modo mobile */
+.nav-list {
+  list-style: none;
+  display: flex;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo do botão de menu mobile */
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.mobile-menu div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+/* Animação para o botão de menu mobile */
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .linha1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .linha2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .linha3 {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+
+                                              /*home*/
+.container1 {
+  background: url("../imagens/clock.fundo1.jpg") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(255, 255, 255, 10), rgb(255, 255, 255, 0) 100%) ;
+}
+
+/* Adiciona uma camada escura para destacar o texto */
+.container1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Estilo do container de texto */
+.texto1 {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo do texto principal */
+.texto-principal {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Linha laranja abaixo do texto principal */
+.sublinhado1 {
+  width: 90px;
+  height: 7px;
+  background-color: #d9534f;
+  margin: 20px;
+}
+
+/* Estilo do texto secundário */
+.texto-secundario {
+  font-size: 20px;
+  color: black;
+  margin-top: 10px;
+}
+
+
+                                       /* Seção Sobre */
+#sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+  padding: 20px;
+}
+
+.container2 {
+  display: flex;
+  background-color: #fff;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.imagem {
+  width: 30%;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.texto2 {
+  max-width: 600px;
+}
+
+.texto2 h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.sublinhado2 {
+  width: 100px;
+  height: 7px;
+  background-color: #d9534f;
+  margin: 0 auto 20px auto;
+}
+
+.texto2 p {
+  font-size: 18px;
+  color: #666;
+}
+
+
+                                    /* Seção guia */
+/* Estilos principais */
+#guia {
+  display: flex;
+  justify-content: center;
+  min-height: 92vh;
+  padding: 20px;
+}
+
+.container3 {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  margin-top: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.container3 h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.sublinhado3 {
+  width: 100px;
+  height: 8px;
+  background-color: #d9534f;
+  margin: 0 auto 20px auto;
+}
+
+.container3 p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 600px; /* Limita a largura máxima do vídeo */
+  height: 315px; /* Proporção padrão para vídeos */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fonte {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+
+
+                         /* Seção MATÉRIAS */
+.container4 {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.container4 h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.sublinhado4 {
+  width: 100px;
+  height: 8px;
+  background-color: #d9534f;
+  margin: 0 auto 20px auto;
+}
+
+.materias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  justify-items: center; 
+}
+
+.materia {
+  text-align: center;
+  margin: 10px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.materia p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Estilo para links */
+.materias a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit; /* Herda a cor do texto */
+  display: inline-block; /* Permite aplicar padding e margin */
+}
+
+/* Efeito de hover */
+.materias .materia {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.materias a:hover .materia {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+                               /* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+
+                    /* Estilo para telas menores (mobile) */
+@media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    max-width: 200px;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .nav-list.active {
+    height: 250px;
+    background-color: #333;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-list li {
+    margin: 15px 0;
+  }
+
+  .texto1 {
+    text-align: center; 
+    padding: 0 20px; 
+  }
+
+  .texto-principal {
+    font-size: 36px; 
+  }
+
+  .sublinhado1 {
+    width: 60px; 
+    height: 5px;
+    margin: 15px auto; 
+  }
+
+  .texto-secundario {
+    font-size: 16px; 
+  }
+
+  #sobre {
+    height: auto; 
+    padding: 20px;
+  }
+
+  .container2 {
+    flex-direction: column; 
+    text-align: center;
+  }
+
+  .imagem {
+    width: 80%; 
+    max-width: 300px;
+    margin: 0 auto 20px auto; 
+  }
+
+  .texto2 {
+    max-width: 100%; 
+  }
+
+  .texto2 h1 {
+    font-size: 28px; 
+  }
+
+  .sublinhado2 {
+    width: 60px; 
+    height: 5px;
+    margin: 15px auto; 
+  }
+
+  .texto2 p {
+    font-size: 16px; 
+  }
+
+  .video-container iframe {
+    height: 200px; /* Ajuste de altura para dispositivos menores */
+}
+
+  .materias {
+    grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas em telas médias */
+  }
+
+  .container3 h2 {
+    font-size: 32px;
+  }
+
+  .container3 p {
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,269 @@
+/* Estilos gerais */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+#exercicio {
+  background-color: #f5f5f5;
+  color: #d9534f;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  height: auto; /* Ajusta altura para conteúdo dinâmico */
+  border: 2px solid #e1e1e6;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 0 2px 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.questao-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.questao {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.resposta-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.proxima-pergunta {
+  margin-top: 32px;
+}
+
+.button {
+  background-color: #d9534f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  height: 48px;
+  padding: 0 32px;
+
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(0.8);
+}
+
+.resposta:disabled {
+  cursor: not-allowed;
+}
+
+.final-message {
+  font-size: 20px;
+  text-align: center;
+}
+
+.final-message span {
+  display: block;
+  margin-top: 8px;
+}
+
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: #049b48;
+}
+
+.incorrect {
+  background-color: #a10101;
+}
+
+/* Estilos para cabeçalho e navegação */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-spacing {
+  height: 60px;
+}
+
+.nav-list {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  background-color: #333;
+  border-radius: 0 0 8px 8px;
+}
+
+.nav-list li {
+  margin: 10px 0;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #d9534f;
+}
+
+.mobile-menu {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  margin-left: 70%;
+}
+
+.mobile-menu div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  display: flex;
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Estilos para footer */
+footer {
+  font-family: 'Arial', sans-serif;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  margin-top: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+
+/* Telas menores que 768px */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 10px;
+  }
+
+  .nav-list {
+    width: 100%;
+    top: 50px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .questao {
+    font-size: 20px;
+  }
+
+  .resposta-container {
+    grid-template-columns: 1fr; /* Colunas únicas para itens */
+  }
+
+  .button {
+    font-size: 14px;
+    height: 40px;
+    padding: 0 20px;
+  }
+}
+
+/* Telas menores que 480px */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .questao {
+    font-size: 18px;
+  }
+
+  .button {
+    font-size: 12px;
+    height: 36px;
+  }
+
+  .nav-list li a {
+    font-size: 16px;
+  }
+}
